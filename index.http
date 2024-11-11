@@ -1,0 +1,59 @@
+GET http://localhost:3000/courses 
+
+### 
+
+POST http://localhost:3000/courses 
+Content-Type: application/json 
+
+{
+  "course_name": "React Js", 
+  "professor": "Prof Nikhil",
+  "start_date":"2024-04-20",
+  "end_date": "2024-07-20" 
+
+} 
+
+### 
+
+PUT http://localhost:3000/courses/4
+Content-Type: application/json 
+
+{
+    "course_name": "Node js",
+    "professor": "MR Nikhil"
+}
+
+### 
+
+DELETE http://localhost:3000/courses/4
+
+### 
+
+GET http://localhost:3000/assignments?course_id=1
+
+### 
+
+POST http://localhost:3000/assignments 
+Content-Type: application/json
+
+{
+    "course_id": 1,
+    "title": "HTML Website",
+    "due_date":"2024-02-30",
+    "status":"completed"
+}
+
+### 
+
+PUT http://localhost:3000/assignments/1
+Content-Type: application/json
+
+{
+    "title": "HTML Master",
+    "due_date": "2024-02-29",
+    "status": "pending"
+}
+
+### 
+
+DELETE http://localhost:3000/assignments/1
