@@ -187,8 +187,8 @@ app.delete('/courses/:id', async (req, res) => {
 // --- Assignment Endpoints ---
 
 // Get assignments by course ID
-app.get('/assignments', async (req, res) => {
-    const { course_id } = req.query;
+app.get('/assignments/:course_id', async (req, res) => {
+    const { course_id } = req.params;
     if (!course_id) {
         return res.status(400).send({ error: "course_id is required" });
     }
@@ -223,3 +223,4 @@ app.delete('/assignments/:id', async (req, res) => {
     await db.run(assignmentDeleteQuery, [id]);
     res.status(200).send("Assignment Deleted");
 });
+
